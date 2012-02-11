@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>mainMenu</key>
+	<dict>
+		<key>items</key>
+		<array>
+			<string>205C2AE0-4FF1-4EA3-B733-3E50BECAFF0C</string>
+			<string>845EFBD9-46EA-4570-8FD6-E7B0C806902C</string>
+			<string>42B74E99-D941-4958-80F1-115C625B81AB</string>
+			<string>------------------------------------</string>
+			<string>50D814AE-D850-4C97-AF3E-1FDE4366C6A3</string>
+		</array>
+		<key>submenus</key>
+		<dict/>
+	</dict>
+	<key>name</key>
+	<string>Haskell</string>
+	<key>ordering</key>
+	<array>
+		<string>205C2AE0-4FF1-4EA3-B733-3E50BECAFF0C</string>
+		<string>845EFBD9-46EA-4570-8FD6-E7B0C806902C</string>
+		<string>42B74E99-D941-4958-80F1-115C625B81AB</string>
+		<string>50D814AE-D850-4C97-AF3E-1FDE4366C6A3</string>
+		<string>B9611363-B401-41C1-BC4C-24B0311E83DE</string>
+		<string>733BD242-9C64-4048-AFAD-B729D690A201</string>
+	</array>
+	<key>uuid</key>
+	<string>3CFB79D5-80D4-456F-B007-DB46029AC75F</string>
+</dict>
+</plist>
