@@ -32,12 +32,13 @@ main = do
 -- Not very sophisticated, we're just looking for indentation.
 findTopLevelDefinition :: Int -> String -> Maybe String
 findTopLevelDefinition lineNo document
-    = filterMaybe (\x -> all isAlphaNum x && x /= "import" )
+    = filterMaybe isName
     . (listToMaybe . words =<<) . listToMaybe
     . filter (not . (" " `isPrefixOf`)) . reverse 
     . filter (not . null) . take lineNo . lines
     $ document
     where
+    isName x = all (\c -> isAlphaNum c || c `elem` "_'") x && x /= "import"
     filterMaybe p mx = mx >>= \x -> if p x then Just x else Nothing
     
 
