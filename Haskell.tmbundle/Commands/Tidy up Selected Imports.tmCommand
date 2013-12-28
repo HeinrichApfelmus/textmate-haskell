@@ -8,14 +8,14 @@
 	<string>: ${TM_HASKELL:=ghc}
 require_cmd "$TM_HASKELL"
 
-cd "${TM_BUNDLE_SUPPORT}"; "$TM_HASKELL" -e 'interact tidyImports' Utils.hs 2&gt;&amp;1
+cd "${TM_BUNDLE_SUPPORT}"; "$TM_HASKELL" -e 'interact tidyImports' Imports.hs 2&gt;&amp;1
 </string>
 	<key>fallbackInput</key>
 	<string>none</string>
 	<key>input</key>
 	<string>selection</string>
 	<key>name</key>
-	<string>Tidy up Imports</string>
+	<string>Tidy up Selected Imports</string>
 	<key>output</key>
 	<string>replaceSelectedText</string>
 	<key>uuid</key>
