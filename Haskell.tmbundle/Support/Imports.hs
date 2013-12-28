@@ -10,6 +10,8 @@ import Data.List
 import Data.Ord
 import Text.ParserCombinators.ReadP as P
 
+import Utils
+
 type Parser = P.ReadP
 
 {-----------------------------------------------------------------------------
@@ -27,7 +29,7 @@ data Import = Import
     } deriving (Eq, Ord, Show, Read)
 
 -- pretty printing
-prettyImports imports = unlines . map format . sortOn iModule $ imports
+prettyImports imports = unlines' . map format . sortOn iModule $ imports
     where
     sortOn f = sortBy (comparing f)
     

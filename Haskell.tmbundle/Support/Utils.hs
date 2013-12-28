@@ -5,6 +5,7 @@
 ------------------------------------------------------------------------------}
 module Utils where
 
+import Data.Char
 import Data.List
 import System.FilePath
 
@@ -20,6 +21,11 @@ parentDirs = map joinPath . tail . inits . init . splitPath
 includes :: FilePath -> [String]
 includes = map ("-i"++) . parentDirs
 
+{-----------------------------------------------------------------------------
+    lexical manipulations
+------------------------------------------------------------------------------}
+removeTrailingWhitespace :: String -> String
+removeTrailingWhitespace = reverse . dropWhile isSpace . reverse
 
-
-
+unlines' :: [String] -> String
+unlines' = unlines . map removeTrailingWhitespace
