@@ -37,12 +37,12 @@ prettyImports imports = unlines' . map format . sortOn iModule $ imports
         "import"
         ++ (if iQual then " qualified " else qualspaces)
         ++ iModule ++ padding maxmodule (length iModule)
-        ++ maybe "" (" as " ++) iAlias ++ padding maxalias (lengthAlias iAlias)
+        ++ maybe "" (" as " ++) iAlias
+        ++ padding maxalias (maybe 0 length iAlias)
         ++ prettySymbols (iHiding, iSymbols)
     
     padding max n = replicate (max - n) ' '
-    lengthAlias   = maybe 0 length
-    maxalias      = maximum $ map ((length " as " +) . lengthAlias . iAlias) imports 
+    maxalias      = maximum $ map (maybe 0 id . fmap (length . (" as " ++)) . iAlias) imports 
     maxmodule     = maximum $ map (length . iModule) imports
     qualspaces    = if any iQual imports then map (const ' ') " qualified " else " "
 
