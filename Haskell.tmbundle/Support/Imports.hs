@@ -68,7 +68,7 @@ pImport = Import <$ string "import" <* skipSpaces
 
 pQual    = option False (True <$ string "qualified")
 pHiding  = option False (True <$ string "hiding"   )
-pModule  = munch1 $ \c -> c == '.' || isAlpha c
+pModule  = munch1 $ \c -> c == '.' || isAlpha c || isDigit c
 pAlias   = leftoption Nothing (Just <$> (string "as" *> skipSpaces *> pModule))
 -- FIXME: Constructor field T(..) are not parsed correctly.
 pSymbols = leftoption [] $ string "(" *> skipSpaces *>
